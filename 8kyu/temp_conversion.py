@@ -1,3 +1,6 @@
+# Convert Farenheit to Celsius.
+
+
 def weather_info(temp):
     c = convert_to_celsius(temp)
     if c <= 0:
@@ -9,5 +12,6 @@ def weather_info(temp):
 def convert_to_celsius(temperature):
     celsius = round((temperature - 32) * (5 / 9), 2)
     return celsius
+
 
 weather_info(50)
