@@ -14,4 +14,4 @@ def descending_order(num):
     print(int(''.join(li_digits)))       
 
 
-descending_order(896758)
+descending_order(145263)
