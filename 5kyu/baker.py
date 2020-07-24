@@ -6,10 +6,16 @@
 # # must return 0
 # cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar: 500, flour: 2000, milk: 2000})
 
-def cakes(recipe, available):
-    for key, value in recipe.items():
-        if key in available:
-            print(available[key])
-            
 
-print(cakes({"flour": 500, "sugar": 200, "eggs": 1}, {"flour": 1200, "sugar": 1200, "eggs": 5, "milk": 200}))
+def cakes(recipe, available_ing):
+    cakes = []
+    for key, value in recipe.items():
+        if key in available_ing:
+            cakes.append(available_ing[key] // recipe[key])            
+        else:
+            cakes.append(0)
+        actual_cakes_made = min(cakes)
+    return actual_cakes_made
+               
+
+print(cakes({"apples": 3, "flour": 300, "sugar": 150, "milk": 100, "oil": 100}, {"sugar": 500, "flour": 2000, "milk": 2000}))
