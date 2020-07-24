@@ -12,14 +12,22 @@
 # is_prime(-1) /* false */
 
 
+import math
+
+
 def is_prime(num):
-    if num > 1:
-        for i in range(2, num):
-            if num % i == 0:
-                return False
-        return True
-    else:
+    if num == 1:
         return False
+    if num == 2:
+        return True
+    if num > 2 and num % 2 == 0:
+        return False
+    
+    divisor = math.floor(math.sqrt(num))
+    for d in range(3, 1 + divisor, 2):
+        if num % d == 0:
+            return False
+    return True
 
 
-print(is_prime(11))
+print(is_prime(47))
