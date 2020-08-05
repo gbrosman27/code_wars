@@ -1,11 +1,23 @@
 
 def stat(strg):
-    # your code
+    r_scores = []    
+    a_scores = []
+    times = strg.split(", ")
+    for nums in times:
+        scores = nums.split("|")  
+        r_scores.append(scores[0])
+        range = int(max(r_scores)) - int(min(r_scores))
+        
+
+    print(range)
+
+
+stat("01|15|59, 1|47|6, 01|17|20, 1|32|34, 2|3|17")
 
 
 
-
-
+# print(f"Range: {rhours}|{rminutes}|{rseconds} Average: {ahours}|{aminutes}|{aseconds} Median: {mhours}|{mminutes}|{mseconds}")
+    
 
 # You are the "computer expert" of a local Athletic Association (C.A.A.). 
 # Many teams of runners come to compete. Each time you get a string of all race 
