@@ -2,14 +2,19 @@
 def stat(strg):
     r_scores = []    
     a_scores = []
+    m_scores = []
     times = strg.split(", ")
     for nums in times:
         scores = nums.split("|")  
         r_scores.append(scores[0])
+        a_scores.append(scores[1])
+        m_scores.append(scores[2])
         range = int(max(r_scores)) - int(min(r_scores))
+        average = sum(int(r_scores)) / r_scores.count()
+        
         
 
-    print(range)
+    print(average)
 
 
 stat("01|15|59, 1|47|6, 01|17|20, 1|32|34, 2|3|17")
