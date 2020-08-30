@@ -14,3 +14,6 @@ function even_or_odd(number) {
 
   console.log(even_or_odd(84))
   console.log(even_or_odd(67))
+
+// ternary option:
+// return number % 2 ? "Odd" : "Even"
