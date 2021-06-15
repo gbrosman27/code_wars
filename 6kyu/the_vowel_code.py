@@ -9,21 +9,23 @@
 
 vowels = {"a": 1, "e": 2, "i": 3, "o": 4, "u": 5}
 
-# def encode(st):
-#     new_word = st
-#     for vowel in vowels.keys():
-#         if vowel in new_word:
-#             new_word = new_word.replace(vowel, str(vowels[vowel]))
-#     return new_word
+# If the vowels exist in the passed in string, change those vowels to the correct value.
+def encode(st):
+    new_word = st
+    for vowel in vowels.keys():
+        if vowel in new_word:
+            new_word = new_word.replace(vowel, str(vowels[vowel]))
+    return new_word
         
 
+# If the passed in string contains a number that also corresponds to a vowel in the above dictionary, replace the number with the correct vowel.
 def decode(st):  
     reg_word = st
     for key, val in vowels.items():
-        if str(val) in st:
-            reg_word = st.replace(str(val), str(vowels[key]), str(vowels[key]))
-    return reg_word
+        if str(val) in reg_word:
+            reg_word = reg_word.replace(str(val), str(key))
+    return reg_word   
 
 
-# print(encode('hello world'))
+print(encode('hello world'))
 print(decode('h2ll4 w4rld'))
