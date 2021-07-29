@@ -3,17 +3,20 @@
 # "identifier"   =>  "identifier"
 # ""             =>  ""
 
-def solution(camelCase):
-    # loop through string and find uppercase. split on uppercase.
-    for char in camelCase:
-        if char.isupper():  
-            result = camelCase.split(char)
-            
-            return result
+
+def solution(s):
+    # Declare empty string to eventually hold result.
+    final_string = ""
+
+    # loop through each character in the string. If char is uppercase, 
+    # add to final string with a space before it. Else add lowercase char to final_string.
+    for i in range(len(s)):
+        char = s[i]
+        if char.isupper():
+            final_string += " " + char
+        else:
+            final_string += char
+    return final_string
 
 
-
-print(solution("camelCase"))
-
-# first = camelCase[:index]
-# second = camelCase[index:]
+print(solution("camelCaseWord"))
